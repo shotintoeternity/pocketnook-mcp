@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.shotintoeternity/pocketnook",
+  "description": "Deploy a repository or a working directory to a private URL, from inside a coding agent. Private by default: only GitHub/Google identities the owner names can open it.",
+  "repository": {
+    "url": "https://github.com/shotintoeternity/pocketnook-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@pocketnook/mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "POCKETNOOK_TOKEN",
+          "description": "An agent token minted at pocketnook.dev/home under \"Agent access\". Acts on its owner's own nooks only; 90-day expiry.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "POCKETNOOK_URL",
+          "description": "Base URL, if not https://pocketnook.dev.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

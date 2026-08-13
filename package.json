@@ -1,0 +1,41 @@
+{
+  "name": "@pocketnook/mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.shotintoeternity/pocketnook",
+  "type": "module",
+  "description": "pocketnook MCP server (GTM-010): deploy a repository to a private URL from inside a coding agent.",
+  "license": "MIT",
+  "homepage": "https://pocketnook.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shotintoeternity/pocketnook-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "deploy",
+    "claude-code",
+    "cursor",
+    "agents",
+    "hosting",
+    "private"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "pocketnook-mcp": "./bin/pocketnook-mcp.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "skill",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}
