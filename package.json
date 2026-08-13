@@ -24,7 +24,7 @@
     "access": "public"
   },
   "bin": {
-    "pocketnook-mcp": "./bin/pocketnook-mcp.mjs"
+    "pocketnook-mcp": "bin/pocketnook-mcp.mjs"
   },
   "files": [
     "bin",
