@@ -29,7 +29,7 @@
   "files": [
     "bin",
     "src",
-    "skill",
+    "skills",
     "LICENSE"
   ],
   "engines": {

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "pocketnook": {
+      "command": "npx",
+      "args": ["-y", "@pocketnook/mcp"],
+      "env": { "POCKETNOOK_TOKEN": "${POCKETNOOK_TOKEN}" }
+    }
+  }
+}

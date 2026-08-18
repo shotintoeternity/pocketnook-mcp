@@ -42,8 +42,33 @@ descriptions cannot say on their own — that a deploy builds what is pushed
 rather than what is on disk, and that sharing does not notify anyone:
 
 ```sh
-cp -r apps/mcp/skill/pocketnook ~/.claude/skills/
+cp -r skills/pocketnook ~/.claude/skills/
 ```
+
+### Or install both at once, as a Claude Code plugin
+
+This repository is also a Claude Code plugin: the skill above and the MCP
+server, wired together, with the token read from your environment.
+
+```sh
+claude plugin marketplace add shotintoeternity/pocketnook-mcp
+claude plugin install pocketnook@pocketnook-mcp
+```
+
+Then check it: `claude plugin details pocketnook@pocketnook-mcp` should report
+one skill and one MCP server.
+
+That check is worth running, because the obvious one does not cover it.
+`claude plugin validate` reads `plugin.json` and the skills, and **does not
+read `.mcp.json` at all** — it reports `✔ Validation passed` on a plugin whose
+`.mcp.json` is not even parseable JSON. `details` is what counts the
+components, and it reports `MCP servers (0)` for exactly that plugin.
+
+The marketplace manifest and the plugin manifest are both here, in one
+repository, because a plugin-only repository is not installable: `plugin
+marketplace add` fails with *Marketplace file not found*, and `plugin install`
+answers *not found in any configured marketplace*. `.claude-plugin/marketplace.json`
+lists this repository's root as its one plugin.
 
 ## Configuration
 
